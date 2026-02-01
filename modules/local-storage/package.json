@@ -1,0 +1,25 @@
+{
+  "name": "react-native-local-storage",
+  "version": "0.0.0",
+  "description": "Local Storage implementation",
+  "main": "src/index",
+  "codegenConfig": {
+    "name": "LocalStorageSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "author": "Alan Lima <alanronison.lima@gmail.com> (https://github.com/alanrslima)",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/alanrslima/react-native-local-storage#readme",
+  "create-react-native-library": {
+    "type": "turbo-module",
+    "languages": "kotlin-objc",
+    "tools": [
+      "eslint",
+      "jest",
+      "lefthook",
+      "release-it"
+    ],
+    "version": "0.57.0"
+  }
+}
