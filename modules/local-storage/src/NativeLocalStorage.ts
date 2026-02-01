@@ -15,7 +15,7 @@ export interface Spec extends TurboModule {
   removeItem(key: string): void;
   clear(): void;
 
-  readonly onKeyAdd: CodegenTypes.EventEmitter<KeyValuePair>;
+  readonly onKeyAdded: CodegenTypes.EventEmitter<KeyValuePair>;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>("LocalStorage");

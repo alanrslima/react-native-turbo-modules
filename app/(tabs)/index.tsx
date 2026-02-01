@@ -5,9 +5,20 @@ import { HelloWave } from "@/components/hello-wave";
 import ParallaxScrollView from "@/components/parallax-scroll-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import { useEffect } from "react";
 import LocalStorage from "react-native-local-storage";
 
 export default function HomeScreen() {
+  useEffect(() => {
+    const subscription = LocalStorage.onKeyAdded((pair) =>
+      alert(`New key added: ${pair.key} with value: ${pair.value}`),
+    );
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -25,7 +36,7 @@ export default function HomeScreen() {
       <ThemedView>
         <Pressable
           onPress={async () => {
-            LocalStorage.setItem("Hello expo", "greeting");
+            LocalStorage.setItem("Hello expo", "greeting" + Math.random());
           }}
         >
           <ThemedText>Press to store greeting</ThemedText>
