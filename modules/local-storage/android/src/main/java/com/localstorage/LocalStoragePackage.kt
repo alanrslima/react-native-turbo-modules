@@ -21,11 +21,11 @@ class LocalStoragePackage : BaseReactPackage() {
       val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
       moduleInfos[LocalStorageModule.NAME] = ReactModuleInfo(
         LocalStorageModule.NAME,
-        LocalStorageModule.NAME,
-        false,  // canOverrideExistingModule
-        false,  // needsEagerInit
-        false,  // isCxxModule
-        true // isTurboModule
+        className = LocalStorageModule.NAME,
+          canOverrideExistingModule = false,  // canOverrideExistingModule
+          needsEagerInit = false,  // needsEagerInit
+          isCxxModule = false,  // isCxxModule
+          isTurboModule = true // isTurboModule
       )
       moduleInfos
     }

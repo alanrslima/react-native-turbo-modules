@@ -36,7 +36,7 @@ export default function HomeScreen() {
       <ThemedView>
         <Pressable
           onPress={async () => {
-            LocalStorage.setItem("Hello expo", "greeting" + Math.random());
+            LocalStorage.setItem("Hello expo", "greeting");
           }}
         >
           <ThemedText>Press to store greeting</ThemedText>
